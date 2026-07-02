@@ -1,0 +1,14 @@
+[client]
+showErrorDetails = false
+toolbarMode = "viewer"
+
+[logger]
+level = "info"
+
+[server]
+maxUploadSize = 200
+enableXsrfProtection = false
+enableCORS = false
+
+[browser]
+gatherUsageStats = false
