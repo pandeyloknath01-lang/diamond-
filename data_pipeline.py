@@ -68,8 +68,12 @@ class DiamondDataGenerator:
         grade_map = {'Excellent': 95, 'Very Good': 85, 'Good': 75, 'Fair': 65, 'Poor': 55}
         grade_scores = pd.Series([grade_map[g] for g in grades])
         
-        # Clamp values
-        df = df.clip(lower=df.min() * 0.8, upper=df.max() * 1.2)
+        # Clamp numeric values only
+        numeric_cols = df.select_dtypes(include=[np.number]).columns
+        df[numeric_cols] = df[numeric_cols].clip(
+            lower=df[numeric_cols].min() * 0.8,
+            upper=df[numeric_cols].max() * 1.2
+        )
         
         return df, grade_scores
     
