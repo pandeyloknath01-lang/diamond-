@@ -228,4 +228,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    from app_professional import main as professional_main
+    professional_main()
