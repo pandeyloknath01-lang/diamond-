@@ -3,6 +3,7 @@
 Interactive 3D rendering of diamond geometry
 """
 
+from typing import Tuple, Dict
 import plotly.graph_objects as go
 import numpy as np
 from parameters import DiamondParameters
